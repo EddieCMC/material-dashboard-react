@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useRef, useState } from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -7,6 +8,7 @@ import {
     Avatar,
     Box,
     ButtonBase,
+    Button,
     CardContent,
     ClickAwayListener,
     Grid,
@@ -26,8 +28,9 @@ import ProfileTab from './ProfileTab';
 import SettingTab from './SettingTab';
 
 // assets
-import avatar1 from 'assets/images/users/avatar-1.png';
+import avatar1 from 'assets/images/users/avatar-2.png';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
+import { Alert } from '../../../../../../node_modules/@mui/lab/index';
 
 // tab panel wrapper
 function TabPanel({ children, value, index, ...other }) {
@@ -54,6 +57,10 @@ function a11yProps(index) {
 // ==============================|| HEADER CONTENT - PROFILE ||============================== //
 
 const Profile = () => {
+    const alert = () => {
+        console.log('HHH');
+    };
+
     const theme = useTheme();
 
     const handleLogout = async () => {
@@ -94,11 +101,14 @@ const Profile = () => {
                 ref={anchorRef}
                 aria-controls={open ? 'profile-grow' : undefined}
                 aria-haspopup="true"
-                onClick={handleToggle}
+                onClick={alert}
             >
                 <Stack direction="row" spacing={2} alignItems="center" sx={{ p: 0.5 }}>
-                    <Avatar alt="profile user" src={avatar1} sx={{ width: 32, height: 32 }} />
-                    <Typography variant="subtitle1">John Doe</Typography>
+                    <Link to="/login">
+                        <Button size="small" variant="contained" sx={{ textTransform: 'capitalize' }}>
+                            Sign In
+                        </Button>
+                    </Link>
                 </Stack>
             </ButtonBase>
             <Popper

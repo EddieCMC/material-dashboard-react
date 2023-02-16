@@ -127,7 +127,7 @@ const DashboardDefault = () => {
                     </Box>
                 </MainCard>
             </Grid>
-            <Grid item xs={12} md={5} lg={4}>
+            {/* <Grid item xs={12} md={5} lg={4}>
                 <Grid container alignItems="center" justifyContent="space-between">
                     <Grid item>
                         <Typography variant="h5">Income Overview</Typography>
@@ -145,7 +145,7 @@ const DashboardDefault = () => {
                     </Box>
                     <MonthlyBarChart />
                 </MainCard>
-            </Grid>
+            </Grid> */}
 
             {/* row 3 */}
             <Grid item xs={12} md={7} lg={8}>
